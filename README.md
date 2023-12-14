@@ -12,7 +12,7 @@ A script to generate a random string of any length optionally including upper- a
    1. Length
    2. Lowercase
    3. Numbers
-   4. Specialcharacters
+   4. Special
    5. Uppercase
 3. Add the output parameter below to the Global Script
    1. Result
@@ -28,21 +28,21 @@ let numbersParameter = ~.Parameters.Input.Numbers;
 if (numbersParameter) numbersParameter = true;
 let uppercaseParameter = ~.Parameters.Input.Uppercase;
 if (uppercaseParameter) uppercaseParameter = true;
-let specialcharactersParameter = ~.Parameters.Input.Specialcharacters;
-if (specialcharactersParameter) specialcharactersParameter = true;
+let specialParameter = ~.Parameters.Input.Special;
+if (specialParameter) specialParameter = true;
 
-let d = {length: lengthParameter, numbers: numbersParameter, uppercase: uppercaseParameter, lowercase: lowercaseParameter, specialcharacters: specialcharactersParameter};
+let d = {length: lengthParameter, numbers: numbersParameter, uppercase: uppercaseParameter, lowercase: lowercaseParameter, special: specialParameter};
 let result = '';
 let uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let lowercase = 'abcdefghijklmnopqrstuvwxyz';
 let numbers = '0123456789';
-let specialcharacters = '~!@#$%^&*()_-+={]}[|]:;<,>.?/}';
+let special = '~!@#$%^&*()_-+={]}[|]:;<,>.?/}';
 
 let characters = '';
 if (d.uppercase) characters += uppercase;
 if (d.lowercase) characters += lowercase;
 if (d.numbers) characters += numbers;
-if (d.specialcharacters) characters += specialcharacters;
+if (d.special) characters += special;
 const charactersLength = characters.length;
 let counter = 0;
 characters = sortArrayRandomly(characters.split(""));
@@ -76,5 +76,5 @@ function sortArrayRandomly(d) {
    1. Length: Integer (default: 12)
    2. Lowercase: Boolean (default: false)
    3. Numbers: Boolean (default: false)
-   4. Specialcharacters: Boolean (default: false)
+   4. Special: Boolean (default: false)
    5. Uppercase: Boolean (default: false)
