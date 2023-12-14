@@ -1,6 +1,6 @@
 # Generate Random String
 
-A simple function to generate a random string of any length optionally including upper- and lowercase characters, numbers or selected special characters
+A script to generate a random string of any length optionally including upper- and lowercase characters, numbers or selected special characters
 
 # Version 
 
