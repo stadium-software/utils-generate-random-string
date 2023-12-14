@@ -31,7 +31,6 @@ if (uppercaseParameter) uppercaseParameter = true;
 let specialParameter = ~.Parameters.Input.Special;
 if (specialParameter) specialParameter = true;
 
-let d = {length: lengthParameter, numbers: numbersParameter, uppercase: uppercaseParameter, lowercase: lowercaseParameter, special: specialParameter};
 let result = '';
 let uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let lowercase = 'abcdefghijklmnopqrstuvwxyz';
@@ -39,15 +38,15 @@ let numbers = '0123456789';
 let special = '~!@#$%^&*()_-+={]}[|]:;<,>.?/}';
 
 let characters = '';
-if (d.uppercase) characters += uppercase;
-if (d.lowercase) characters += lowercase;
-if (d.numbers) characters += numbers;
-if (d.special) characters += special;
+if (uppercaseParameter) characters += uppercase;
+if (lowercaseParameter) characters += lowercase;
+if (numbersParameter) characters += numbers;
+if (specialParameter) characters += special;
 const charactersLength = characters.length;
 let counter = 0;
 characters = sortArrayRandomly(characters.split(""));
 characters = characters.join("");
-while (counter < d.length) {
+while (counter < lengthParameter) {
   result += characters.charAt(Math.floor(Math.random() * charactersLength));
   counter += 1;
 }
