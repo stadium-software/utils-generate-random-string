@@ -77,3 +77,4 @@ function sortArrayRandomly(d) {
    3. Numbers: Boolean (default: false)
    4. Special: Boolean (default: false)
    5. Uppercase: Boolean (default: false)
+3. Result: The script returns a string of the requested length
