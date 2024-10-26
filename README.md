@@ -6,6 +6,8 @@ A script to generate a random string of any length optionally including upper- a
 
 1.0 Initial
 
+1.1 All settings true by default
+
 # Global Script Setup
 1. Create a Global Script called "GenerateRandomString"
 2. Add the input parameters below to the Global Script
@@ -19,17 +21,13 @@ A script to generate a random string of any length optionally including upper- a
 4. Drag a *JavaScript* action into the script
 5. Add the Javascript below into the JavaScript code property
 ```javascript
-/* Stadium Script Version 1.0 https://github.com/stadium-software/utils-generate-random-string */
-let lengthParameter = ~.Parameters.Input.Length;
+/* Stadium Script Version 1.1*/
+let lengthParameter = ~.Parameters.Input.Length || 12;
 if (isNaN(parseFloat(lengthParameter))) lengthParameter = 12;
-let lowercaseParameter = ~.Parameters.Input.Lowercase;
-if (lowercaseParameter) lowercaseParameter = true;
-let numbersParameter = ~.Parameters.Input.Numbers;
-if (numbersParameter) numbersParameter = true;
-let uppercaseParameter = ~.Parameters.Input.Uppercase;
-if (uppercaseParameter) uppercaseParameter = true;
-let specialParameter = ~.Parameters.Input.Special;
-if (specialParameter) specialParameter = true;
+let lowercaseParameter = ~.Parameters.Input.Lowercase || true;
+let numbersParameter = ~.Parameters.Input.Numbers || true;
+let uppercaseParameter = ~.Parameters.Input.Uppercase || true;
+let specialParameter = ~.Parameters.Input.Special || true;
 
 let result = '';
 let uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
