@@ -19,7 +19,7 @@ A script to generate a random string of any length optionally including upper- a
 3. Add the output parameter below to the Global Script
    1. Result
 4. Drag a *JavaScript* action into the script
-5. Add the Javascript below into the JavaScript code property
+5. Add the Javascript below unchanged into the JavaScript code property
 ```javascript
 /* Stadium Script Version 1.1*/
 let lengthParameter = ~.Parameters.Input.Length || 12;
